@@ -41,7 +41,7 @@ function strplus.islower(str,ignorews)
   if ignorews == nil then ignorews = false end
  
   if not ignorews and string.match(str,'%s') then return end
-  if str:lower() == str then return true else return false end
+  return str:lower() == str
 end
 
 function strplus.isupper(str,ignorews)
@@ -49,14 +49,14 @@ function strplus.isupper(str,ignorews)
   if ignorews == nil then ignorews = false end
   
   if not ignorews and string.match(str,'%s') then return end
-  if str:upper() == str then return true else return false end
+  return str:upper() == str
 end
 
 function strplus.isnum(str)
   if str == nil then return end
   if string.match(str,'%.') then return false end
   
-  if str:gsub('%D','') == str then return true else return false end
+  return str:gsub('%D','') == str
 end
 
 function strplus.isfloat(str)
@@ -64,12 +64,12 @@ function strplus.isfloat(str)
   if not string.match(str,'%.') then
     return false end
   
-  if str:gsub('%D','') == str then return true else return false end 
+  return str:gsub('%D','') == str
 end
 function strplus.isalpha(str)
   if str == nil then return end
   
-  if string.gsub(str,'%A','') == str then return true else return false end
+  return string.gsub(str,'%A','') == str
 end
 
 function strplus.isspecchar(str,ignorews)
@@ -77,7 +77,7 @@ function strplus.isspecchar(str,ignorews)
   if ignorews == nil then ignorews = false end
   
   if not ignorews and string.match(str,'%s') then return false end
-  if string.match(str,'%W') then return true else return false end
+  return string.match(str,'%W')
 end
 
 function strplus.isalphanum(str,ignorews)
@@ -85,7 +85,7 @@ function strplus.isalphanum(str,ignorews)
   if ignorews == nil then ignorews = false end
   
   if not ignorews and string.match(str,'%s') then return false end
-  if string.match(str,'^%w$') then return true else return false end
+  return string.match(str,'^%w$')
 end
 
 function strplus.separate(str)
@@ -105,9 +105,7 @@ end
 function strplus.isansi(str)
   if str == nil then return end
   
-  local res,_ = pcall(function()
-    return string.char(tonumber(str))
-  end)
+  local res,_ = pcall(function() return string.char(tonumber(str)) end)
   
   return res
 end
@@ -155,7 +153,7 @@ function strplus.constructstring(strtable,sepchar)
     result = result..sepchar..v
   end
   
-  return result:sub(2,#result)
+  if sepchar == '' then return result else return result:sub(2,#result) end
 end
 
 function strplus.stringbyte(str)
