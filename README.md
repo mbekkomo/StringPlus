@@ -1,3 +1,3 @@
 # String+, make string library more extended & advanced.
 
-Lol
+String+ is a module script that extend & advance Lua's String Library
