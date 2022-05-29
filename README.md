@@ -7,12 +7,12 @@ String+ is a module script that extend & advance Lua's String Library.
 Linux or MacOS :
 
 You can use "wget" to download the file.
-```bash
+```console
 $ wget https://raw.githubusercontent.com/UrNightmaree/StringPlus/main/stringplus.lua
 ```
 
 Or you can just use "curl" to download the file
-```bash
+```console
 $ curl https://raw.githubusercontent.com/UrNightmaree/StringPlus/main/stringplus.lua -o stringplus.lua
 ```
 
