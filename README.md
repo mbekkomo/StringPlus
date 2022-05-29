@@ -16,7 +16,7 @@ Or you can just use "curl" to download the file
 $ curl https://raw.githubusercontent.com/UrNightmaree/StringPlus/main/stringplus.lua -o stringplus.lua
 ```
 
-Windows:
+Windows :
 
 Open Powershell (not Command Prompt) and run this cmdlet.
 ```powershell
@@ -32,5 +32,5 @@ local strplus = require 'stringplus'
 ```
 Or with dofile:
 ```lua
-dofile('stringplus.lua) -- Default variable is 'strplus'
+dofile('stringplus.lua') -- Default variable is 'strplus'
 ```
