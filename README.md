@@ -15,3 +15,10 @@ Or you can just use "curl" to download the file
 ```bash
 $ curl https://raw.githubusercontent.com/UrNightmaree/StringPlus/main/stringplus.lua -o stringplus.lua
 ```
+
+Windows:
+
+Open Powershell (not Command Prompt) and run this cmdlet.
+```powershell
+> Invoke-WebRequest -Uri "curl https://raw.githubusercontent.com/UrNightmaree/StringPlus/main/stringplus.lua -o stringplus.lua" -OutFile "c:"
+```
