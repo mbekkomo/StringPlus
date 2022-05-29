@@ -8,5 +8,10 @@ Linux or MacOS :
 
 You can use "wget" to download the file.
 ```bash
-wget https://raw.githubusercontent.com/UrNightmaree/StringPlus/main/stringplus.lua
+$ wget https://raw.githubusercontent.com/UrNightmaree/StringPlus/main/stringplus.lua
+```
+
+Or you can just use "curl" to download the file
+```bash
+$ curl https://raw.githubusercontent.com/UrNightmaree/StringPlus/main/stringplus.lua -o stringplus.lua
 ```
