@@ -20,5 +20,5 @@ Windows:
 
 Open Powershell (not Command Prompt) and run this cmdlet.
 ```powershell
-> Invoke-WebRequest -Uri "curl https://raw.githubusercontent.com/UrNightmaree/StringPlus/main/stringplus.lua -o stringplus.lua" -OutFile "c:"
+> Invoke-WebRequest -Uri "https://raw.githubusercontent.com/UrNightmaree/StringPlus/main/stringplus.lua" -OutFile "c:"
 ```
