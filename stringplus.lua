@@ -195,15 +195,3 @@ strplus.hstr = strplus.hidestring
 strplus.const = strplus.constructstring
 
 return strplus
-
---[[
-List of Func :
-
--sleep
--stringbyte
--const
--hstr
-
-
-
-]]
