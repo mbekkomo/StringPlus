@@ -30,7 +30,7 @@ With require:
 ```lua
 local strplus = require 'stringplus'
 ```
-Or with dofile
-```
+Or with dofile:
+```lua
 dofile('stringplus.lua) -- Default variable is 'strplus'
 ```
