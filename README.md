@@ -22,3 +22,15 @@ Open Powershell (not Command Prompt) and run this cmdlet.
 ```powershell
 > Invoke-WebRequest -Uri "https://raw.githubusercontent.com/UrNightmaree/StringPlus/main/stringplus.lua" -OutFile "c:"
 ```
+(The Script is located in "C:")
+
+## Importing
+
+With require:
+```lua
+local strplus = require 'stringplus'
+```
+Or with dofile
+```
+dofile('stringplus.lua) -- Default variable is 'strplus'
+```
