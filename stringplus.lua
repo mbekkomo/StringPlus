@@ -8,7 +8,7 @@ strplus.debugmode = false
 local debugm = strplus.debugmode
 
 -- Debug Function
-function strplus._version()
+function strplus.__version()
   local version = '1.1'
   
   return print('Current version of String+ is '..version)
