@@ -104,6 +104,7 @@ end
 
 function strplus.isansi(str)
   if str == nil then return end
+  if tonumber(str) < 32 then return end
   
   local res,_ = pcall(function() return string.char(tonumber(str)) end)
   
