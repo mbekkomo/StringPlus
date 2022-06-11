@@ -110,16 +110,6 @@ function strplus.isansi(str)
   return res
 end
 
-function strplus.color(rgb,str)
-  if rgb == nil then return end
-  if str == nil then return end
-  if not strplus.num(rgb) then return end
-  if #rgb ~= 9 then return end
-  
-  
-  return '\169'..rgb..str
-end
-
 function strplus.tobool(str)
   if str == nil then return end
   local booltable = {
@@ -127,8 +117,7 @@ function strplus.tobool(str)
     ["false"] = false
   }
   
-  if booltable[str] == nil then return nil end
-  return booltable[str]
+  return booltable[str:lower()]
 end
 
 function strplus.hidestring(str,hidechar)
@@ -153,7 +142,7 @@ function strplus.constructstring(strtable,sepchar)
     result = result..sepchar..v
   end
   
-  if sepchar == '' then return result else return result:sub(2,#result) end
+  return result
 end
 
 function strplus.stringbyte(str)
