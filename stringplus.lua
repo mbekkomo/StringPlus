@@ -120,7 +120,7 @@ function strplus.concatestr(strtable,sepchar)
       result = result..sepchar..v
    end
    
-   return result
+   return result:sub(1,1)
 end
 
 function strplus.stringbyte(str)
