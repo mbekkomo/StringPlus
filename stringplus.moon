@@ -1,14 +1,13 @@
 -- [ MADE BY URNIGHTMARE ] --
 -- [ Github repo : github.com/UrNightmaree/StringPlus ] --
--- [ Discord : UrNigthmaree#2322 ] --
 
 sp = {}
 
-sp._Info = (type) ->
-	type or= "text"
+sp._Info = (type) -> -- Print version of the module
+	type or= "text" -- Set to 'text' if not defined
 
-	method = switch type
-		when "json"
+	method = switch type\lower!
+		when "json" -- Print JSON text
 			->
 				print "
 {
@@ -17,7 +16,7 @@ sp._Info = (type) ->
 	\"Creator\":\"UrNightmaree@GitHub\"
 }
 "
-		when "text"
+		when "text" -- Print normal Text
 			->
 				print "
 [====================]
@@ -29,7 +28,7 @@ sp._Info = (type) ->
 [====================]
 "
 
-		else
+		else -- Send error if type/option is invalid
 			-> print "\nExpected valid option, got invalid option : #{type}\n"
 
 	method!
@@ -47,14 +46,22 @@ sp.split = (str,delim) -> -- This function will split a string
 			-> -- Set to split the entire string if delim is not defined
 				for i = 1,#str
 					result[i] = str\sub i,i
-
 	
-
 	method! -- Configure the function
 	result -- Return the table
 
-sp.trim = (str) ->
+sp.trim = (str) -> -- Remove whitespace in right and/or left string
+	return if not str
+	
+	result = str\gsub("^%s+","")\gsub("%s+$","")
+
+	result
+
+sp.xmatch = (str,match) -> -- Same as string.find but return boolean instead of number
 	return if not str
 
-	result = nil
+	result = str\find match
+
+	result != nil
+
 
