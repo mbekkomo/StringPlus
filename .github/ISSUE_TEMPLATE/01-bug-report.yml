@@ -1,1 +1,10 @@
+name: Bug Report
+description: Create Bug Issue
+title: "[BUG]: "
+label: "bug"
 
+body:
+- type: textarea
+  id: buginfo
+  attributes:
+    label:
