@@ -1,67 +1,35 @@
--- [ MADE BY URNIGHTMARE ] --
--- [ Github repo : github.com/UrNightmaree/StringPlus ] --
-
 sp = {}
 
-sp._Info = (type) -> -- Print version of the module
-	type or= "text" -- Set to 'text' if not defined
+sp.split = (self,delim) ->
+  result = {}
+  
+  n = 1
 
-	method = switch type\lower!
-		when "json" -- Print JSON text
-			->
-				print "
-{
-	\"Name\":\"StringPlus\",
-	\"Version\":\"re-1.0\",
-	\"Creator\":\"UrNightmaree@GitHub\"
-}
-"
-		when "text" -- Print normal Text
-			->
-				print "
-[====================]
+  switch delim
+    when nil
+      for i = 1,#self
+        table.insert result,self\sub i,i
+    else
+      for i in string.gmatch(self, "([^"..delim.."]+)") do
+        table.insert result,i
+  
+  return result
 
- Module Name : \"StringPlus\"
- Version : re-1.0
- Creator : github.com/UrNightmaree
+sp.xmatch = (self,pattern) ->
+  return self\find(pattern) != nil
 
-[====================]
-"
-
-		else -- Send error if type/option is invalid
-			-> print "\nExpected valid option, got invalid option : #{type}\n"
-
-	method!
-
-sp.split = (str,delim) -> -- This function will split a string
-	return if not str
-	
-	result = {}
-	method = switch delim
-		when delim
-			-> -- Split the string with delim parameter
-				for i in str\gmatch "([^#{delim}]+)"
-					result[i] = i
-		else
-			-> -- Set to split the entire string if delim is not defined
-				for i = 1,#str
-					result[i] = str\sub i,i
-	
-	method! -- Configure the function
-	result -- Return the table
-
-sp.trim = (str) -> -- Remove whitespace in right and/or left string
-	return if not str
-	
-	result = str\gsub("^%s+","")\gsub("%s+$","")
-
-	result
-
-sp.xmatch = (str,match) -> -- Same as string.find but return boolean instead of number
-	return if not str
-
-	result = str\find match
-
-	result != nil
+sp.isupper = (self) ->
+  return self\match('%u+') != nil
 
 
+sp.setup = () =>
+  for i,v in pairs sp
+      string[i] = v
+
+sp\setup!
+
+str = 'HI'
+
+print tostring str\isupper!
+
+sp
