@@ -1,9 +1,7 @@
 sp = {}
 
-sp.split = (self,delim) ->
+sp.split = (delim) =>
   result = {}
-  
-  n = 1
 
   switch delim
     when nil
@@ -15,21 +13,18 @@ sp.split = (self,delim) ->
   
   return result
 
-sp.xmatch = (self,pattern) ->
-  return self\find(pattern) != nil
+sp.xmatch = (pattern) =>
+  s,e = self\find pattern
+  return self\sub(s,e)
 
-sp.isupper = (self) ->
-  return self\match('%u+') != nil
+sp.isupper = =>
+  return self\match '^%u+$'
 
+sp.islower = =>
+  return self\match '^%l+$'
 
-sp.setup = () =>
+sp.setup = ->
   for i,v in pairs sp
       string[i] = v
 
-sp\setup!
-
-str = 'HI'
-
-print tostring str\isupper!
-
-sp
+return sp
