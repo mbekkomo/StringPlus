@@ -23,6 +23,17 @@ sp.isupper = =>
 sp.islower = =>
   return self\match '^%l+$'
 
+sp.iswhitespace = =>
+  return self\match '^%s+$'
+
+sp.isspecial = =>
+  return self\match '^%W+%S+$'
+
+
+
+
+
+
 sp.setup = ->
   for i,v in pairs sp
       string[i] = v

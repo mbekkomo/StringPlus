@@ -1,6 +1,6 @@
 sp = require 'stringplus'
 sp.setup!
 
-str = 'FOOHI'
+str = '#++$'
 
-print(str\isupper!)
+print(str\isspecial!)
